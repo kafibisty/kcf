@@ -8,5 +8,85 @@
 <body>
     <h1> my name is bicharan </h1>
     <p>my country name  is bangladesh </p>
+    <header>
+        <div class="top-bar">
+            <h2>Government of the People's Republic of Bangladesh</h2>
+            <h3>Department of Immigration & Passports</h3>
+            <div class="language-switch">
+                <button onclick="switchLanguage('en')">English</button>
+                <button onclick="switchLanguage('bn')">বাংলা</button>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Apply Online</a></li>
+                <li><a href="#">5 Steps to e-Passport</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">More</a>
+                    <div class="dropdown-content">
+                        <a href="#">Urgent Applications</a>
+                        <a href="#">Instructions</a>
+                        <a href="#">Passport Fees</a>
+                        <a href="#">Check Status</a>
+                        <a href="#">Contact</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Welcome to Bangladesh e-Passport Portal</h1>
+            <p>Apply for a new passport or re-issue online.</p>
+            <button onclick="showForm()">Apply Now</button>
+        </section>
+        
+        <section class="form-section" id="apply-form" style="display: none;">
+            <h2>Apply for e-Passport</h2>
+            <form onsubmit="submitForm(event)">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                
+                <label for="passport">Passport Type:</label>
+                <select id="passport">
+                    <option>Regular</option>
+                    <option>Official</option>
+                    <option>Diplomatic</option>
+                </select>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        function showForm() {
+            document.getElementById('apply-form').style.display = 'block';
+        }
+        
+        function switchLanguage(lang) {
+            alert("Switching to " + (lang === 'en' ? 'English' : 'Bangla'));
+        }
+        
+        function submitForm(event) {
+            event.preventDefault();
+            alert("Application Submitted Successfully!");
+        }
+    </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
